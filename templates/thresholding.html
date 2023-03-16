@@ -1,0 +1,29 @@
+{% extends "index.html" %}
+{% block content %}
+  <div id="image-container-outer">
+    <img src="{{ unprocessed_image }}" id="image-container-1" />
+    <img src="{{ processed_image }}" id="image-container-2" />
+  </div>
+  <div id="input-container">
+    <h3>OpenCV Thresholding</h3>
+    <label for="threshold-input">Thresholding value</label>
+    <input type="text" id="threshold_text_input" value="127" />
+    <input type="range" id="threshold_range_input" value="127" min="0" max="255"/>
+    <br />
+    <label for="max-input">Max value assigned to pixel values exceeding the threshold</label>
+    <input type="text" id="max_value_text_input" value="255" />
+    <input type="range" id="max_value_range_input" value="255" min="0" max="255"/>
+    <br />
+    <label for="threshold_type_input">Thresholding type</label>
+    <select id="threshold_type_input">
+      <option value="0">Binary</option>
+      <option value="1">Binary Inverted</option>
+      <option value="2">Truncate</option>
+      <option value="3">To Zero</option>
+      <option value="4">To Zero Inverted</option>
+    </select>
+    <br />
+    <button id="button">Apply</button>
+  </div>
+  <script src="{{ url_for('static', filename='js/thresholding.js') }}"></script>
+{% endblock %}

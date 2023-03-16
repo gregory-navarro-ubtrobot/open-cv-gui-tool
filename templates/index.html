@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My app</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <h1>Child templates should appear below this heading</h1>
+  <div id="mode-select">
+    <button id="threshold">Thresholding</button>
+    <button id="adaptivethreshold">Adaptive Thresholding</button>
+    <button id="houghlines">Hough Lines</button>
+  </div>
+  {% block content %}
+  {% endblock %}
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

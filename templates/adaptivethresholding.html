@@ -1,0 +1,40 @@
+{% extends "index.html" %}
+{% block content %}
+  <div id="image-container-outer">
+    <img src="{{ unprocessed_image }}" id="image-container-1" />
+    <img src="{{ processed_image }}" id="image-container-2" />
+  </div>
+  <div id="input-container">
+    <h3>OpenCV Thresholding</h3>
+    
+    <label for="max-input">Max value assigned to pixel values exceeding the threshold</label>
+    <input name="max_value" type="text" id="max_value_text_input" value="255" />
+    <input name="max_value" type="range" id="max_value_range_input" value="255" min="0" max="255"/>
+    <br />
+
+    <label for="block-size-input">Block size</label>
+    <input name="block_size" type="text" id="block_size_input" value="11" />
+    <div>
+      <button id="decrement_block_size">-</button>
+      <button id="increment_block_size">+</button>
+    </div>
+    <br />
+
+    <label for="constant-input">Constant</label>
+    <input name="constant" type="text" id="constant_input" value="2" />
+    <div>
+      <button id="decrement_constant">-</button>
+      <button id="increment_constant">+</button>
+    </div>
+    <br />
+
+    <label for="threshold_type_input">Adaptive method</label>
+    <select name="adaptive_threshold_type" id="threshold_type_input">
+      <option value="cv.ADAPTIVE_THRESH_MEAN_C">Adaptive thresh mean c</option>
+      <option value="cv.ADAPTIVE_THRESH_GAUSSIAN_C">Adaptive thresh gaussian c</option>
+    </select>
+    <br />
+    <button id="button">Apply</button>
+  </div>
+  <script src="{{ url_for('static', filename='js/adaptivethresholding.js') }}"></script>
+{% endblock %}

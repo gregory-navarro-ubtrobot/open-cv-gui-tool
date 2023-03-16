@@ -1,0 +1,38 @@
+{% extends "index.html" %}
+{% block content %}
+  <div id="image-container-outer">
+    <img src="{{ unprocessed_image }}" id="image-container-1" />
+    <img src="{{ processed_image }}" id="image-container-2" />
+  </div>
+  <div id="input-container">
+    <h3>OpenCV Hough Transform Pipeline</h3>
+    
+    <label for="d">Threshold</label>
+    <input name="threshold" type="text" id="threshold_text_input" value="127" />
+    <input name="threshold" type="range" id="threshold_range_input" value="127" min="0" max="255"/>
+    <br />
+
+    <label for="rho-input">Rho</label>
+    <input name="rho_value" type="text" id="rho_text_input" value="1" />
+    <input name="rho_value" type="range" id="rho_range_input" value="1" min="0" max="10"/>
+    <br />
+
+    <label for="theta-input">Theta (how many pi's / 180)</label>
+    <input name="theta_value" type="text" id="theta_text_input" value="1" />
+    <input name="theta_value" type="range" id="theta_range_input" value="1" min="0" max="10" step="0.25"/>
+    <br />
+
+    <label for="min-line-input">Min Line Length</label>
+    <input name="min_line_value" type="text" id="min_line_length_text_input" value="10" />
+    <input name="min_line_value" type="range" id="min_line_length_range_input" value="10" min="0" max="200"/>
+    <br />
+
+    <label for="max-line-input">Max Line Length</label>
+    <input name="max_line_value" type="text" id="max_line_gap_text_input" value="100" />
+    <input name="max_line_value" type="range" id="max_line_gap_range_input" value="100" min="0" max="200"/>
+    <br />
+
+    <button id="button">Apply</button>
+  </div>
+  <script src="{{ url_for('static', filename='js/houghlines.js') }}"></script>
+{% endblock %}

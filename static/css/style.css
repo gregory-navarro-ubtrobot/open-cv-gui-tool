@@ -1,0 +1,37 @@
+body {
+  display: flex;
+  flex-direction: column;
+  max-height: 100vh;
+  padding: 1em;
+}
+
+#mode-select {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+  margin: 1em;
+}
+
+#image-container-outer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+  max-width: 100%;
+  max-height: 60vh;
+  object-fit: contain;
+}
+
+#image-container-1, #image-container-2 {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+#input-container {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  gap: 0px;
+}
